@@ -62,6 +62,7 @@ void CGame::CargandoObjetos()
 		enemigoArreglo[i] = new Nave(&openGlImplement, "Enemigo", i * 2, 0, NAVE_ENEMIGA);
 		enemigoArreglo[i]->GetNaveObjeto()->SetAutoMovimiento(false);
 		enemigoArreglo[i]->GetNaveObjeto()->SetPasoLimite(4);
+		enemigoArreglo[i]->GetNaveObjeto()->ScaleXYZ(20.f, 20.f, 20.f);
 	}
 
 	opcionSeleccionada = MENU_OPCION1;
@@ -233,7 +234,6 @@ void CGame::JugandoPintar(){
 	}
 	if (vida <= CERO)
 		estadoJuego = ESTADO_TERMINANDO;
-
 	nave->Draw();
 	for (int i = 0; i < nivel[nivelActual].Enemigos_VisiblesAlMismoTiempo; i++)
 	{
