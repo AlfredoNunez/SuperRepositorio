@@ -64,6 +64,7 @@ void Nave::Draw()
 {
 	if (visible){
 		nave->ScaleXYZ(20.f, 20.f, 20.f);
+		nave->TranslateZ(-2.f);
 		nave->Draw();
 		for (int i = 0; i < MAXIMO_DE_BALAS; i++)
 		{
