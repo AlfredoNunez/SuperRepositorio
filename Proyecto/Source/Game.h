@@ -39,6 +39,8 @@ private:
 	void InicializandoStage();
 	void IniciarEnemigo();
 	void IniciarNave();
+	GLfloat fondomovible;
+	GLfloat menumovible;
 	
 	Uint8 *keys;//Esta variable nos servira para ver si determinadas teclas estan o no pulsadas
 	SDL_Event event;//La variable event de tipo evento de SDL nos servira para motorizar

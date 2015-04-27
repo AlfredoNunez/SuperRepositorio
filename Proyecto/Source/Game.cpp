@@ -8,6 +8,8 @@ CGame::CGame(){
 	estadoJuego = ESTADO_INICIANDO;
 	tiempoFrameInicial = CERO;
 	tick = CERO;
+	fondomovible = 0.f;
+	menumovible = 0.f;
 	atexit(SDL_Quit);
 }
 
@@ -205,6 +207,12 @@ void CGame::MoverEnemigo(){
 }//Termina MoverEnemigo
 
 void CGame::JugandoPintar(){
+	fondomovible -= 2;
+	jugandoFondo->TranslateXY(0.f, fondomovible++);
+	if (fondomovible<-1400)
+	{
+		fondomovible = 0.f;
+	}
 	jugandoFondo->Draw();
 	////////////////////////////////////////
 	//////// CONTROL DE COLISIONES /////////
@@ -320,19 +328,37 @@ void CGame::MenuActualizar()
 
 void CGame::MenuPintar()
 {
+	menumovible -=2;
+	menuFondo->TranslateXY(menumovible--,0.f );
+	if (menumovible<-720)
+	{
+		menumovible = 0.f;
+	}
 	menuFondo->Draw();
 	textoTitulo->TranslateXYDraw(WIDTH_SCREEN / 8, 0);
 
 	textoNombre->TranslateXY( WIDTH_SCREEN / 3, 450);//570
 	textoNombre->Draw();
 
+
 	textoOpcion1->TranslateXYDraw(320, 220);
-	textoOpcion2->TranslateXYDraw(320, 220 + 30);
+	textoOpcion2->TranslateXYDraw(320, 220 + 40);
 
 	if (opcionSeleccionada == MENU_OPCION1)
-		textoOpcion1Sel->TranslateXYDraw(320, 220);
+	{
+		textoOpcion1Sel->TranslateXYDraw(360, 235);
+		textoOpcion1Sel->ScaleXYZ(10.f, 10.f, 10.f);
+		textoOpcion1Sel->RotateXYZ(0, 0, 0);
+		//textoOpcion1Sel->Draw();
+
+	}
 	else
-		textoOpcion2Sel->TranslateXYDraw(320, 220 + 30);
+	{
+		textoOpcion2Sel->TranslateXYDraw(360, 235 + 40);
+		textoOpcion2Sel->ScaleXYZ(10.f, 10.f, 10.f);
+		textoOpcion2Sel->RotateXYZ(1.f, 1.f, 0.f);
+		//textoOpcion2Sel->Draw();
+	}
 
 }//void	
 
