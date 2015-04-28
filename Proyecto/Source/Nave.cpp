@@ -33,9 +33,9 @@ void Nave::crearNuevo(int pos)
 		bala[i]->TranslateXY(-5, 0);
 	}
 	if (tipoNave == NAVE_PROPIA)
-		nave->TranslateXY(pos, HEIGHT_SCREEN - 64);
+		nave->TranslateXY(pos, HEIGHT_SCREEN +220);
 	if (tipoNave == NAVE_ENEMIGA)
-		nave->TranslateXY(pos, 0);
+		nave->TranslateXY(pos, -120);
 }
 
 void Nave::Disparar(int balas)

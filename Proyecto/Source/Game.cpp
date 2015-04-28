@@ -156,17 +156,17 @@ bool CGame::Start()
 bool CGame::LimitePantalla(Sprite*objeto, int bandera)
 {
 	if (bandera & BORDE_IZQUIERDO)
-		if (objeto->GetX() <= 0)
+		if (objeto->GetX() <= -250)
 			return true;
 	if (bandera & BORDE_SUPERIOR)
-		if (objeto->GetY() <= 0)
+		if (objeto->GetY() <= -280)
 			return true;
 
 	if (bandera & BORDE_DERECHO)
-		if (objeto->GetX() >= (WIDTH_SCREEN - objeto->GetW()))
+		if (objeto->GetX() >= (WIDTH_SCREEN - objeto->GetW()+250))
 			return true;
 	if (bandera & BORDE_INFERIOR)
-		if (objeto->GetY() >= HEIGHT_SCREEN - objeto->GetH())
+		if (objeto->GetY() >= HEIGHT_SCREEN - objeto->GetH()+280)
 			return true;
 	return false;
 
