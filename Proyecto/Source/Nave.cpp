@@ -40,18 +40,23 @@ void Nave::crearNuevo(int pos)
 
 void Nave::Disparar(int balas)
 {
-	bala[balaVisible]->ScaleXYZ(5.f, 5.f, 5.f);
+	
 	if (visible)
 	{
 		bala[balaVisible]->SetVisible(true);
 		switch (tipoNave)
 		{
-		case NAVE_PROPIA:
+		case NAVE_PROPIA:\
 			bala[balaVisible]->TranslateXY(nave->GetX() + nave->GetW() / 2, nave->GetY());
+			bala[balaVisible]->ScaleXYZ(10.f, 10.f, 10.f);
+			bala[balaVisible]->Draw();
 			break;
 
 		case NAVE_ENEMIGA:
+			bala[balaVisible]->ScaleXYZ(10.f, 10.f, 10.f);
 			bala[balaVisible]->TranslateXY(nave->GetX() + nave->GetW() / 2, nave->GetY() + nave->GetH());
+			
+			bala[balaVisible]->Draw();
 			break;
 		}
 		balaVisible++;
