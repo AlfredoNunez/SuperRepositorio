@@ -40,6 +40,7 @@ void Nave::crearNuevo(int pos)
 
 void Nave::Disparar(int balas)
 {
+	bala[balaVisible]->ScaleXYZ(5.f, 5.f, 5.f);
 	if (visible)
 	{
 		bala[balaVisible]->SetVisible(true);
@@ -68,6 +69,7 @@ void Nave::Draw()
 		nave->Draw();
 		for (int i = 0; i < MAXIMO_DE_BALAS; i++)
 		{
+			bala[i]->ScaleXYZ(5.f, 5.f, 5.f);
 			bala[i]->Draw();
 			switch (tipoNave)
 			{
