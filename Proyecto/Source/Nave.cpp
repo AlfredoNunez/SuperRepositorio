@@ -33,9 +33,9 @@ void Nave::crearNuevo(int pos)
 		bala[i]->TranslateXY(-5, 0);
 	}
 	if (tipoNave == NAVE_PROPIA)
-		nave->TranslateXY(pos, HEIGHT_SCREEN +220);
+		nave->TranslateXY(pos, HEIGHT_SCREEN - 64);
 	if (tipoNave == NAVE_ENEMIGA)
-		nave->TranslateXY(pos, -120);
+		nave->TranslateXY(pos, 0);
 }
 
 void Nave::Disparar(int balas)
@@ -53,9 +53,8 @@ void Nave::Disparar(int balas)
 			break;
 
 		case NAVE_ENEMIGA:
-			bala[balaVisible]->ScaleXYZ(10.f, 10.f, 10.f);
+			bala[balaVisible]->ScaleXYZ(50.f, 50.f, 50.f);
 			bala[balaVisible]->TranslateXY(nave->GetX() + nave->GetW() / 2, nave->GetY() + nave->GetH());
-			
 			bala[balaVisible]->Draw();
 			break;
 		}

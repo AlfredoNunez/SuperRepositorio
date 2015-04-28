@@ -365,11 +365,12 @@ void CGame::MenuPintar()
 
 void CGame::IniciarEnemigo(){
 	for (int i = 0; i < nivel[nivelActual].Enemigos_VisiblesAlMismoTiempo; i++)
-		enemigoArreglo[i]->crearNuevo(rand() % (WIDTH_SCREEN - 64));
+		enemigoArreglo[i]->crearNuevo(rand() % (800));
+	//enemigoArreglo[i]->crearNuevo(rand() % (WIDTH_SCREEN - 64));
 }
 
 void CGame::IniciarNave(){
-	nave->crearNuevo(WIDTH_SCREEN / 2);
+	nave->crearNuevo(700/2);
 }
 
 void CGame::TerminadoPintar(){
