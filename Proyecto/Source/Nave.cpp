@@ -53,7 +53,7 @@ void Nave::Disparar(int balas)
 			break;
 
 		case NAVE_ENEMIGA:
-			bala[balaVisible]->ScaleXYZ(50.f, 50.f, 50.f);
+			bala[balaVisible]->ScaleXYZ(10.f, 10.f, 10.f);
 			bala[balaVisible]->TranslateXY(nave->GetX() + nave->GetW() / 2, nave->GetY() + nave->GetH());
 			bala[balaVisible]->Draw();
 			break;

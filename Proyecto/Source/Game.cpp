@@ -349,7 +349,7 @@ void CGame::MenuPintar()
 	{
 		textoOpcion1Sel->TranslateXYDraw(370, 242);
 		textoOpcion1Sel->ScaleXYZ(5.f, 5.f, 5.f);
-		//textoOpcion1Sel->RotateXYZ(5.f, 5.f, 10.f);
+		textoOpcion1Sel->RotateXYZ(2.f, 0.f, 0.f);
 		//textoOpcion1Sel->Draw();
 
 	}
@@ -357,7 +357,7 @@ void CGame::MenuPintar()
 	{
 		textoOpcion2Sel->TranslateXYDraw(370, 242+40);
 		textoOpcion2Sel->ScaleXYZ(5.f, 5.f, 5.f);
-		//textoOpcion2Sel->RotateXYZ(1.f, 1.f, 0.f);
+		textoOpcion2Sel->RotateXYZ(1.f, 0.f, 0.f);
 		//textoOpcion2Sel->Draw();
 	}
 
@@ -365,12 +365,11 @@ void CGame::MenuPintar()
 
 void CGame::IniciarEnemigo(){
 	for (int i = 0; i < nivel[nivelActual].Enemigos_VisiblesAlMismoTiempo; i++)
-		enemigoArreglo[i]->crearNuevo(rand() % (800));
-	//enemigoArreglo[i]->crearNuevo(rand() % (WIDTH_SCREEN - 64));
+		enemigoArreglo[i]->crearNuevo(rand() % (WIDTH_SCREEN - 64));
 }
 
 void CGame::IniciarNave(){
-	nave->crearNuevo(700/2);
+	nave->crearNuevo(WIDTH_SCREEN / 2);
 }
 
 void CGame::TerminadoPintar(){
